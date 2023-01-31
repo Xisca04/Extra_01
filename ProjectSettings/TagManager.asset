@@ -8,6 +8,7 @@ TagManager:
   - Bomb
   - Background
   - Ground
+  - Bonus Money
   layers:
   - Default
   - TransparentFX

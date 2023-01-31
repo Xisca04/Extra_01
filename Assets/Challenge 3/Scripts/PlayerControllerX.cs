@@ -17,6 +17,9 @@ public class PlayerControllerX : MonoBehaviour
     public AudioClip moneySound;
     public AudioClip explodeSound;
 
+    public int counter;
+
+
 
     // Start is called before the first frame update
     void Start()
@@ -56,8 +59,8 @@ public class PlayerControllerX : MonoBehaviour
         {
             fireworksParticle.Play();
             playerAudio.PlayOneShot(moneySound, 1.0f);
+            counter++;
             Destroy(other.gameObject);
-
         }
 
         // if player touch the groun = GAME OVER
@@ -66,6 +69,14 @@ public class PlayerControllerX : MonoBehaviour
         {
             gameOver = true;
             Debug.Log("Game Over!");
+        }
+
+        if (other.gameObject.CompareTag("Bonus Money"))
+        {
+            fireworksParticle.Play();
+            playerAudio.PlayOneShot(moneySound, 1.0f);
+            counter += 5;
+            Destroy(other.gameObject);
         }
 
     }
