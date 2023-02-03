@@ -30,5 +30,6 @@ public class SpawnManagerX : MonoBehaviour
             Instantiate(objectPrefabs[index], spawnLocation, objectPrefabs[index].transform.rotation);
         }
 
+        // 2 variables: una que decida izq o dch y otra que decida la altura aleatoriamente
     }
 }
